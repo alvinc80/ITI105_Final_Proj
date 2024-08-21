@@ -7,7 +7,7 @@ with open('alzheimers_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Define the Streamlit app
-st.title('Forecasting of Alzheimer\'s Disease')
+st.title('Forecasting Alzheimer\'s Disease')
 
 # Input fields for features
 gender = st.selectbox('Gender', ['Male', 'Female'])
@@ -30,7 +30,6 @@ functionalassmt = st.slider('Functional Assessment', 0, 10, 8)
 memorycomplaints = st.selectbox('Memory Complaints', ['No', 'Yes'])
 behavioralproblems = st.selectbox('Behavioral Problems', ['No', 'Yes'])
 adl = st.slider('Activities of Daily Living (ADL)', 0, 10, 8)
-diagnosis = st.selectbox('Diagnosis status for Alzheimer\'s Disease', ['No', 'Yes'])
 agegroup = st.selectbox('Age Group', ['60-64', '65-69', '70-74', '75-79', '80-84', '85-90'])
 total_symptom_score = st.slider('Total Symptom Score', 0, 4, 2)
 total_risk_factors = st.slider('Total Risk Factors', 0, 5, 3)
@@ -40,7 +39,6 @@ gender_numeric = 1 if gender == 'Female' else 0
 smoking_numeric = 1 if smoking == 'Yes' else 0
 memorycompl_numeric = 1 if memorycomplaints == 'Yes' else 0
 behavioralprb_numeric = 1 if behavioralproblems == 'Yes' else 0
-diagnosis_numeric = 1 if diagnosis == 'Yes' else 0
 
 match gender:
     case '65-69':
